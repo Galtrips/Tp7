@@ -12,7 +12,7 @@ private:
 	Tri* typeTri = nullptr;
 public:
 	void tri();
-	void RequeteMultiple();
+	void RequeteMultiple(vector<string> str);
 	void trier();
 	Tri* getTri() { return typeTri; }
 	void setTri(Tri* tri);

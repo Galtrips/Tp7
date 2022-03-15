@@ -20,9 +20,17 @@ int main(void) {
 	p1.addMotCle("Nature");
 	p1.addMotCle("Montagne");
 	p1.addMotCle("Hivers");
+	p1.addMotCle("Test");
+
 	p2.addMotCle("Vacances");
+	p2.addMotCle("Nature");
+
+	p3.addMotCle("Nature");
+	p3.addMotCle("Test");
+
 	p4.addMotCle("Vacances");
 	p4.addMotCle("Nature");
+	p4.addMotCle("Test");
 
 	a1.addImage(p1);
 	a1.addImage(p2);
@@ -31,7 +39,6 @@ int main(void) {
 	TriChronologique Tri;
 	TriAlphabétique Tri2;
 	a1.setTri(&Tri2);
-
 	a1.trier();
 
 	cout << a1;
@@ -46,6 +53,12 @@ int main(void) {
 	cout << endl;
 	string path = R"(Z:\Documents\ProgObjet\Tp5\Tp5)";
 	a1.loadImage(path);
+
+	vector<string> motClef;
+	motClef.push_back("Nature");
+	motClef.push_back("Test");
+	motClef.push_back("Vacances");
+	a1.RequeteMultiple(motClef);
 
 
 	return EXIT_SUCCESS;

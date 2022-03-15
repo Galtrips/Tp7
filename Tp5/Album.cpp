@@ -96,10 +96,43 @@ void Album::loadImage(string path) {
 	}
 }
 
-void Album::RequeteMultiple() {
+void Album::RequeteMultiple(vector<string> str) {
 
-	vector<string> v1;
-	vector<string> v2;
+	vector<Image*> v2;
+	vector<Image*> v3;
 
-	vector<string> v3;
+	vector<Image*> cr;
+
+	int i = 1;
+	for (auto j : str) {
+		for (auto i : recherche) {
+			if (i.first == j) {
+				v2.push_back(i.second);
+			}
+		}
+		if (i != 1) {
+			cr.clear();
+			set_intersection(v2.begin(), v2.end(), v3.begin(), v3.end(), back_inserter(cr));
+			v2.clear();
+			v3 = cr;
+		}
+		else {
+			v3 = v2;
+			v2.clear();
+			i++;
+		}
+	}
+
+	cout << "\x1b[31m\x1b[4mRecherche Mot Clef multiple :\x1b[0m" << endl;
+	cout << endl;
+	for (auto i : cr) {
+		cout << "\x1b[36m- " << i->getNom() << endl;
+	}
+	cout << endl;
+	cout << "\x1b[31m\x1b[4mMots clefs de la recherche :\x1b[0m" << endl;
+	cout << endl;
+	for (auto i : str) {
+		cout << "\x1b[33m - " << i << endl;
+	}
+	cout << "\x1b[0m";
 }
