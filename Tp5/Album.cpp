@@ -130,7 +130,7 @@ void Album::RequeteMultiple(vector<string> str) {
 		}
 	}
 
-	cout << "\x1b[31m\x1b[4mRecherche Images - Clef multiple :\x1b[0m" << endl;
+	cout << "\x1b[31m\x1b[4mRecherche Image - Clef multiple :\x1b[0m" << endl;
 	cout << endl;
 	for (auto i : cr) {
 		cout << "\x1b[36m - " << i->getNom() << endl;
