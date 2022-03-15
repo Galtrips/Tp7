@@ -45,11 +45,13 @@ int main(void) {
 
 	a1.Affiche();
 
-	cout << "Mot contenant le mot \"Nature\": " << endl;
+	cout << "\x1b[31m\x1b[4mMot contenant le mot \"Nature\":\x1b[0m " << endl;
+	cout << endl;
 	auto p = a1.getImages("Nature");
 	for (auto i : p) {
-		cout << i.getNom() << endl;
+		cout << "\x1b[36m - " << i.getNom() << endl;
 	}
+	cout << "\x1b[0m";
 	cout << endl;
 	string path = R"(Z:\Documents\ProgObjet\Tp5\Tp5)";
 	a1.loadImage(path);
